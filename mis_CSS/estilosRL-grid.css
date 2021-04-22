@@ -1,0 +1,636 @@
+/*-----VALORES GENERALES--------------------------------------------*/
+:root {
+	--fondo-principal: rgb(235, 235, 235);
+	--fondo-header: rgba(32,32,32,1);
+	--fondo-nav: rgba(32,32,32,1);
+	/* --fondo-nav: #0099cc; */
+	--fondo-nav-hover: rgba(32,32,32,1);
+	--color-nav-hover: #85989c;
+	/* --fondo-nav-hover: #33b5e5; */
+	--fondo-novedad-barra-sup:rgba(0, 0, 0, 0.253);
+	--fondo-novedad-activa: rgb(228, 68, 68);
+	--fondo-ofertas: #e67e22;
+	/* --fondo-footer: rgba(32,32,32,1); */
+	--fondo-footer: linear-gradient(130deg, rgba(32,32,32,1) 0%, rgba(32,32,32,1) 60%, rgba(95,158, 160,1) 99%, rgba(95,158, 160,1) 100%);
+	--fuente-primaria: 'Roboto', 'Montserrat-Light', verdana, sans-serif;
+	--fuente-size: 16px;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	list-style: none;
+	outline: 0;
+	box-sizing: border-box;
+	font-size: var(--fuente-size);	
+}
+
+.tituh1 {font-size: 2rem; font-weight: 700;}
+.tituh2 {font-size: 1.5rem; font-weight: 500;}
+.tituh3 {font-size: 1.17rem;}
+.tituh4 {font-size: 1rem;}
+.tituh5 {font-size: 0.83rem;}
+.tituh6 {font-size: 0.67rem;}
+img {
+	display: block;/* con esto las imágenes son tratadas como un bloque*/
+	margin: auto;/* este bloque se puede centrar bien*/
+	max-width: 100%;/* tiene un máximo, antes que se pixele la imagen*/
+	min-width: 50%;/* tiene un mínimo, antes que se pixele la imagen*/
+	height: auto;/* la altura se coloca para que no deforme la imagen*/
+}
+
+/*-----1.BODY---------------------------------------------------------*/
+body {
+	background-color: var(--fondo-principal);
+	/*background-image: url("../mis_IMAGENES/logo-tapiz-cork-board.png");*/
+	font-family: var(--fuente-primaria);
+}
+
+/*-----2.CONTENEDOR---------------------------------------------------*/
+	.contenedor {
+		width:90%;
+		max-width: 1200px;
+		font-size: 1rem;
+		margin: 0 auto;
+		height: auto;	
+		/* CSSGrid */
+		/* hijos: .header, .novedades, .clientes, .laempresa, .lateral y .footer*/
+		display:grid;
+		grid-gap: 30px;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(5, auto);
+	}
+	.contenedor .novedades {
+			box-shadow: 0px 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+			padding: 1.25rem 1.25rem 0.625rem 1.25rem;
+			border-radius: 4px;
+		}
+		.contenedor .clientes,
+		.contenedor .laempresa,
+		.contenedor .ofertas,
+		.contenedor .footer {
+			padding: 1.25rem;
+			border-radius: 4px;
+			box-shadow: 0px 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+		}
+
+/*-----2.1.HEADER-------------------------------------------------------*/
+			.header {
+				font-size: 1rem;
+				padding: 0.3125rem 1.25rem 0.3125rem 0.625rem;
+				border-radius: 4px;
+				background: var(--fondo-header);
+				box-shadow: 0px 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+				grid-column: 1 / -1;
+				/* CSSGrid */
+				/* hijos: .logo-RL, .texto-RL y nav;*/
+				display:grid;
+				grid-template-columns: 0.8fr 2.5fr 5.5fr;
+				grid-template-rows: auto;
+				grid-column-gap: 0.625rem;
+				grid-row-gap: 0.625rem;
+
+				justify-content: center;
+				align-items: center;	
+			}
+/*-----2.1.1.HEADER/LOGO RL---------------------------------------------*/
+				.header .logo-RL {
+					grid-column: 1 / 2;
+				}
+					.header .logo-RL img{
+						width: 80%;
+					}
+/*-----2.1.2.HEADER/TITULO----------------------------------------------*/
+					.header .texto-RL {
+					grid-column: 2 / 3;
+					text-shadow: 0rem 0rem 0.375rem black;
+					color: white;
+				}
+/*-----2.1.3.HEADER/NAV Y/O ICONO---------------------------------------*/
+				.header nav {
+					grid-column: 3 / 4;
+					margin-right: 0.625rem;
+				}
+/*-----2.1.3.1.HEADER/NAV/NAV-------------------------------------------*/
+					.header nav ul {
+						float: right;
+					}
+						.header nav ul li {
+							display: inline-block;
+							margin: auto 0.3125rem;
+						}
+						.header nav ul li a {
+							background: var(--fondo-nav);
+							color:#fff;
+							text-align: center;
+							text-decoration: none;
+							padding: 0.625rem 0.9375rem;
+							border-radius: 4px;
+							}					
+							.header nav a:hover {
+								background: var(--fondo-nav-hover);
+								color: var(--color-nav-hover);
+								border-radius: 4px;
+								transition: all 70ms linear;
+								transform: scale(1.15,1.15)
+							}
+/*-----2.1.3.2.HEADER/NAV/ICONO---------------------------------------*/
+					.checkbtn {
+						/* font-size: 1.875rem; */
+						background-color: rgba(224, 17, 17, 0.233);						
+						color: white;
+						margin: 0;
+						cursor: pointer;
+						display: none;
+                        position: fixed;
+                        width: 10%;
+                        height: 5%;
+                        top: 1.5rem;
+						z-index: 3000;
+					}
+					#img11, #img22{
+						max-width: 50%;
+					}
+					#check{
+						display: none;
+					}
+					.sichecked {
+						display: block;
+						animation: 0.2s rotar_ico_nav;
+					}
+					.nochecked {
+						display: none;
+					}	
+					@keyframes rotar_ico_nav {
+						0%	{transform: rotate(0deg);}
+						100%{transform: rotate(180deg);}
+					}	
+
+/*-----2.1.3.3.ICONO PARA SUBIR PAGINA---------------------------------------*/
+					#check2{
+						display: none;
+					}
+					.s1{
+						/* background-color: rgba(0, 0, 0, 0.342); */
+						margin: 0;
+						cursor: pointer;
+						position: fixed;
+						border-radius: 50px solid red;
+						width: 1.875rem;
+						height: 1.875rem;						
+						bottom: 1rem;
+						right: 1.5rem;
+						color: red;
+						transition: 1s all;
+						z-index: 10002;
+					}
+					.s1show {
+						display: block;
+						/* transform: none; */
+						/* transform: translateX(-150px); */
+					}
+					.s1hide {
+						display: none;
+						/* transform: translateX(120px); */
+					}
+					
+/*-----2.2.NOVEDADES----------------------------------------------------*/
+			.novedades {
+				/* background-color: rgb(255, 255, 255); */
+				background-image: url("../mis_IMAGENES/logo-tapiz-leather_1.png");
+				grid-column: 1 / 3;
+				grid-row: 2 / 3;
+				width: 100%;
+				height: auto;
+			}
+/*-----2.2.1.NOVEDADES/TITULO---------------------------------------------*/
+			.titnovedades{
+				text-align: center;
+				height: 1.83rem;
+				margin: 0;
+				background-color: #004d4d;
+				color: rgb(231, 255, 255);
+				border-radius: 4px;
+				text-shadow: 0rem 0rem 0.375rem black;
+			}
+/*-----2.2.2.NOVEDADES/CAJA DE LA BARRA DESLIZANTE------------------------*/
+				#caja-barra-sup {
+					background-color: var(--fondo-novedad-barra-sup);
+					width: 100%;
+					height: 0.3125rem;/* 10px*/
+				}
+					#barra-sup {
+						height: 100%;
+						background-color: var(--fondo-novedad-activa);
+						border-radius: 0 3px 3px 0;
+						transition: width 0.8s;
+					}
+/*-----2.2.3.NOVEDADES/SLIDESHOW------------------------------------------*/
+				#slideshow {
+					/* position: relative; */
+					/* overflow: hidden; */
+					/* height: 100px; */
+					z-index: 998;
+					margin-top: 5px;
+					width: 100%;
+					/* height: 300px; */
+
+					display:grid;
+					/* grid-gap: 5px; */
+					grid-template-columns: 1.2fr 0.8fr;
+				}
+					#slideshow #img1{
+						grid-column: 1 / 2;
+						width: 80%;
+						margin-top: 0;
+						margin-bottom: 0;
+						margin: auto;
+					}
+					#img2 {
+						width: 0px;
+						height: 0px;
+						opacity: 0;
+						display: none;
+					}
+					.active {
+						/* left:0 !important; */
+						opacity: 1 !important;
+						transition: all 1s;
+					}
+					#descripcion {
+						grid-column: 2 / 3;
+						/* font-size: 14px; */
+						font-family: Verdana, Geneva, Tahoma, sans-serif;
+						background-color: rgb(204, 204, 204);
+						margin: auto 0.3125rem auto 0;
+					}
+/*-----2.2.4.NOVEDADES/INDICADORES----------------------------------------*/
+				#indicadores {
+					grid-column: 1 / -1;
+					grid-row: 5 / 6;
+					width: 100%;
+					text-align: center;
+					/* position: absolute; */
+					/* padding-bottom: 5px; */
+					/* z-index: 999; */
+				}
+				.circulos {
+					width: 1.25rem;/*20px*/
+					height: 0.375rem;/*6px*/
+					margin: 0 0.3152rem 0 0.3125rem;/* 0 5 0 5px*/
+					border: 1px solid rgba(0, 0, 0, 0.623);
+					display: inline-block;
+					background-color: transparent;
+					border-radius: 20%;	
+				}
+				.resaltado {
+					background-color: var(--fondo-novedad-activa);
+					transition: background-color .8s;
+				}
+
+/*-----3.OFERTAS------------------------------------------------------*/
+		.ofertas {
+			background: var(--fondo-ofertas);
+			grid-column: 3 / 4;
+			grid-row: 2 / 5;
+			padding: 1.25rem;
+			/*width: 100%;*/
+			display:grid;
+			grid-gap: 5px;
+			grid-template-columns: 1fr;
+			grid-template-rows: auto;
+
+			justify-content: flex-start;
+			align-content: flex-start;	
+
+		}
+/*-----3.1.OFERTAS/TITULO---------------------------------------------*/			 
+			.ofertas .tit-ofertas{
+				margin-bottom: 0.9375rem;
+				text-align: center;
+			}	
+				.ofertas .tit-ofertas{
+				position: relative;
+				animation-name: animo-tit-ofertas;
+				animation-duration: 1.5s;
+				animation-iteration-count: infinite;
+				}		 
+				@keyframes animo-tit-ofertas {
+					0%	{left: 0px; top: 0px;}
+					50%	{left: 1px; top: 1px;
+						background-color: orangered; color: #F1CFE2;
+						border-radius: 6px;}
+					100%{left: 0px; top: 0px;}
+				}	
+/*-----3.2.OFERTAS/LOGOS------------------------------------------------*/			
+			.ofertas .logo-OF img {
+				border: 2px dotted red;
+				width: 100%;
+			}		 
+/*-----3.3.OFERTAS/DESCRIPCION------------------------------------------*/
+			.ofertas .des-OF{
+				margin-bottom: 0.625rem;
+				border-bottom: 1px solid black;
+			}
+
+/*-----4.CLIENTES-------------------------------------------------------*/	
+		.clientes {
+			background-color: rgba(218, 245, 245, 0.479);
+			/* background-color: rgb(95,158,160); */
+			background-image: url("../mis_IMAGENES/felt.png");
+			background-position-x: center;
+			background-blend-mode: multiply;
+			/* background-image: url("../mis_IMAGENES/logo-tapiz-madera.png"); */
+			
+			grid-column: 1 / 3;
+			grid-row: 3 / 4;
+			/* CSSGrid */
+			/* hijos: .tit-cliente, .logo-cliente, .texto-cliente;*/
+			display:grid;
+			grid-gap: 5px;
+			grid-template-columns: 1fr 4fr;
+			grid-template-rows: auto;
+			grid-column-gap: 15px;
+			justify-content: center;
+			align-items: center;	
+		}
+		/*-----4.1.CLIENTES/TITULO----------------------------------------------*/			
+		.clientes .tit-cliente {
+			grid-column: 1 / 3;
+			color: white;
+			text-shadow: 0rem 0rem 0.625rem rgb(255, 255, 255);
+		}
+		/*-----4.2.CLIENTES/LOGO------------------------------------------------*/				
+		.clientes .logo-cliente {
+			grid-column: 1 / 2;
+		}
+		/*-----4.3.CLIENTES/TEXTO-----------------------------------------------*/				
+		.clientes .texto-cliente {
+				padding: 0 0.625rem;
+				grid-column: 2 / 3;
+			}
+
+/*-----5.LA EMPRESA-----------------------------------------------------*/	
+		.laempresa {
+			background-image: url("../mis_IMAGENES/logo-tapiz-climpek.png");
+			grid-column: 1 / 3;
+			grid-row: 4 / 5;
+			/* CSSGrid */
+			/* hijos: .logo1-LE, .tit-LE, .logo2-LE, .texto-LE, .video-LE;*/
+			display: grid;
+			grid-gap: 5px;
+			grid-template-columns: 0.7fr 1.3fr 1fr;
+			grid-template-rows: 3;
+			grid-column-gap: 10px;
+			align-items: center;	
+		}
+/*-----5.1.LA EMPRESA/LOGO RL-------------------------------------------*/			
+			.laempresa .logo1-LE {
+				grid-column: 1 / 2;
+				padding-left: 10px;
+			}		
+				.laempresa .logo1-LE img {
+				width: 50%;
+				position: relative;
+				animation-name: animo-logo1-LE;
+				animation-duration: 0.2s;
+				animation-iteration-count: infinite;
+				}		 
+				@keyframes animo-logo1-LE {
+					0%	{left: 0px; top: 0px;}
+					25%	{left: 1px; top: 0px;}
+					50%	{left: 1px; top: 1px;}
+					75%	{left: 0px; top: 1px;}
+					100%{left: 0px; top: 0px;}
+				}
+/*-----5.2.LA EMPRESA/TITULO--------------------------------------------*/					
+			.laempresa .tit-LE {
+				grid-column: 2 / 3;
+				text-shadow: 0rem 0rem 0.625rem rgb(255, 255, 255);	
+			}
+/*-----5.3.LA EMPRESA/LOGO CHEVROLET------------------------------------*/				
+			.laempresa .logo2-LE {
+				grid-column: 3 / 4;
+			}
+/*-----5.4.LA EMPRESA/TEXTO---------------------------------------------*/				
+			.laempresa .texto-LE {
+				grid-column: 1 / 4;
+				padding: 0.625rem;
+				text-align: left;
+			}
+/*-----5.5.LA EMPRESA/VIDEO---------------------------------------------*/				
+			.laempresa .video-LE {
+				grid-column: 1 / 4;
+				padding: 0.625rem;
+			}
+				.laempresa .video-LE video {
+					width: 100%;
+				}		 
+
+/*-----6.FOOTER---------------------------------------------------------*/	
+		.footer{
+			grid-column: 1 / -1;
+			grid-row: 5 / 6;
+			background: var(--fondo-footer);
+			color: white;
+			text-align: left;
+			padding: 1.25rem;
+			border-radius: 4px;
+		}
+
+
+/*-----MEDIA QUERY / RESPONSIVE-----------------------------------------*/
+
+/*se hace si tiene 992px o menos*/
+@media screen and (max-width: 992px) {
+	:root{
+		font-size: 14px;
+		width: -webkit-fill-available;
+	}	
+	.contenedor{
+		grid-gap: 20px;
+	}
+	/* body{
+		background-color: rgb(117,172,152);
+	} */
+	.header{
+		padding: 0.3125rem 0.625rem;
+		grid-column-gap: 4px;
+	}
+	.header nav{
+		margin-right: 0;
+	}
+	#codigos, #articulos, #precios {
+		font-size: 0.875em;
+	}
+	.s1{
+		width: 1.5625rem;
+		height: 1.5625rem;						
+		bottom: 1rem;
+		right: 1rem;
+	}
+}
+
+/*se hace si tiene 768px o menos*/
+@media screen and (max-width: 768px) {
+	:root{
+		font-size: 14px;
+	}	
+	/* body{
+		background-color: rgb(117,172,152);
+	} */
+	.contenedor{
+		grid-gap: 5px;
+	}
+	.contenedor .header{
+		padding: 0.625rem;
+	}
+	.header .logo-RL img{
+		min-width: 3.125rem;
+	}
+	.header .texto-RL{
+		grid-column: 2 / 4;
+	}
+	.header nav {
+		grid-column: 1 / -1;
+		margin: 5px auto;
+	}
+	.header nav ul {
+		float: none;
+	}
+	.header nav ul li {
+		display: inline-block;
+		margin: auto 5px;
+	}
+	.contenedor .footer{
+		padding: 0.3125rem;
+	}
+	#descripcion {
+		/* font-size: 12px; */
+		margin-top: 0.3125rem;
+		margin-bottom: 0.3125rem;
+	}
+	#codigos, #articulos, #precios {
+		font-size: 12px;
+	}
+	.circulos {
+	width: 0.9375rem;/*15px*/
+	height: 0.3125rem;/*5px*/
+	margin: 0 0.25rem 0 0.25rem;/* 0 4 0 4px*/
+	}
+	.s1{
+		background-color: rgba(0, 0, 0, 0.342);
+		width: 1.25rem;
+		height: 1.25rem;						
+		bottom: 1rem;
+		right: 0.5rem;
+	}
+}
+
+/*se hace si tiene 576px o menos*/
+@media screen and (max-width: 576px) {
+	:root{
+		font-size: 12px;
+	}	
+	/* body{
+		background-color: rgb(143,188,143);/*darkseagreen
+	} */
+	.contenedor{
+		width: 100%;
+		max-width: 1000px;
+		margin: 0;
+		grid-gap: 0;
+	}
+	.contenedor .novedades,
+	.contenedor .clientes,
+	.contenedor .laempresa{
+		border-radius: 0;
+		grid-column: 1 / 4;
+	}
+	.header {
+		border-radius: 0;
+		grid-template-columns: 1fr 6.5fr 2.5fr;
+	}
+	.header .logo-RL img{
+		min-width: 3.125rem;
+	}
+	.header .texto-RL{
+		grid-column: 2 / 3;
+	}
+	.header nav {
+		grid-column: 3 / 4;
+		margin: 0px auto;
+	}
+	.checkbtn {
+		display: block;
+	}
+	#check:checked ~ ul{/* a todos los ul se les hace right 0*/
+		right: 0;
+	}
+	.header nav ul {
+		position: fixed;
+		width: 40%;
+		height: 45vh;
+		background-color: rgba(0, 0, 0, 0.342);
+		/* background: #2c3e50d5; */
+		border-bottom-left-radius: 3.125rem;
+		border-top-left-radius: 3.125rem;
+		top: 5rem;
+		right: -100%;
+		text-align: center;
+		transition: all 0.5s;
+		z-index: 2000;
+	}
+	.header nav ul li {
+		display: block;
+		margin: 1.875rem 0;
+		line-height: 1.875rem;
+	}
+	#slideshow {
+		grid-template-columns: 1fr 1fr;
+	}
+	#codigos, #articulos, #precios {
+		font-size: 0.75em;
+	}
+	.circulos {
+		width: 0.75rem;/*12px*/
+		height: 0.3125rem;/*5px*/
+		margin: 0 0.1875rem 0 0.1875rem;/* 0 3 0 3px*/
+	}
+	.contenedor .ofertas{
+		border-radius: 0;
+		grid-column: 1 / 4;
+		grid-row: 5 / 6;
+		display:grid;
+		grid-gap: 5px;
+		grid-template-columns: 0.4fr 1fr;
+		grid-template-rows: auto;
+
+		justify-content: center;
+		align-items: center;	
+	}
+	.ofertas .tit-ofertas{
+		grid-column: 1 / -1;
+	}		
+	.contenedor .footer {
+		border-radius: 0;
+		grid-column: 1 / 4;
+		grid-row: 6 / 7;
+	}
+}
+
+/*se hace si tiene 341px o menos*/
+@media screen and (max-width: 341px) {
+	:root{
+		font-size: 0.625rem;
+	}	
+	#descripcion {
+		font-size: 10px;
+	}
+	.circulos {
+		width: 0.625rem;/*10px*/
+		height: 0.25rem;/*4px*/
+		margin: 0 0.1875rem 0 0.1875rem;/* 0 3 0 3px*/
+	}
+}		

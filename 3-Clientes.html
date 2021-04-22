@@ -1,0 +1,223 @@
+<!DOCTYPE html> <!-- Tipo de Documento-->
+<html lang="es"> <!-- Etiqueta inicial-->
+
+<!---------------------------------------------------------------->
+	<head> <!-- Cabecera, recursos y datos importantes-->
+		<meta charset="utf-8" />
+		<meta name="author" content="Lucas Zambelli">
+		<meta name="description" content="Prototipo HTML">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, user-scalable=0">
+
+		<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&display=swap" rel="stylesheet">
+
+		<link rel="stylesheet" href="./mis_CSS/estilosRL-clientes.css"><!-- mi carpeta de estilos se pone última para que pise cualquier estilo general de bootstrap-->
+
+		<title>Rep Lucas - Seccion Clientes</title>
+	</head>
+	
+	<body>	
+		<div class="contenedor">	
+
+			<header class="header">
+				<div class="logo-RL">
+					<img src="./mis_IMAGENES/logo-RL.png" alt="logo RL">
+				</div>	
+				<div class="texto-RL">
+					<p class="tituh2">REPUESTOS LUCAS</p>
+					<p class="tituh5">Repuestos alternativos</p>
+					<p class="tituh5">para el automotor marca Chevrolet</p>	
+				</div>
+				 <nav class="nav">
+					<input type="checkbox" id="check">
+					<label for="check" class="checkbtn">
+					   <img src="" class="sichecked" alt="" id="img11">
+					   <img src="" class="nochecked" alt="" id="img22">
+				   </label>
+					   <ul>
+						<li><a class="tituh4" href="1-index-grid.html">Inicio</a></li>
+						<li><a class="tituh4" href="2-Ofertas-bootstrap.html">Ofertas</a></li>
+						<li><a class="tituh4" id="cli1" href="3-Clientes.html">Clientes</a></li>
+						<li><a class="tituh4" href="4-Listado.html">Listado</a></li>
+					</ul>				 
+				</nav>
+			</header>
+
+			<div class="tit1">
+				<p class="tituh2">Formulario de ingreso de cliente</p>
+			</div>
+			<div class="tit2">
+				<p class="tituh5">Si Ud. desea ser Cliente de esta empresa y quiere que le estemos enviando nuestro 
+					Catálogo en forma digital, complete la solicitud y luego de aceptada, se lo estaremos 
+					enviando via email.</b></p>
+			</div>
+
+			<form name= "login-form" class="login-form" id="login-form" autocomplete="off">						
+				<!-- <form name= "formdatos" id="login-form" onsubmit="return evaluar_datos()"> -->
+
+				<!-- Grupo: Nombre y Apellido -->
+				<div class="formu__grupo" id="grupo__NomAp">
+					<label for="NomAp" class="formu__label tituh4">Nombre y Apellido</label>
+					<div class="formu__grupo-input">
+						<input type="text" class="formu__input" name="NomAp" id="NomAp" placeholder="Nombre y Apellido">
+						<i class="formu__valida-estado fas fa-times-circle"></i>
+					</div>
+					<p class="formu__input-error">El Nombre y Apellido tiene que ser de 5 a 40 dígitos y solo puede contener números, letras y guión bajo.</p>	
+				</div>	
+
+				<!-- Grupo: Cuit -->
+				<div class="formu__grupo" id="grupo__Cuit">
+					<label for="Cuit" class="formu__label tituh4">Cuit</label>
+					<div class="formu__grupo-input">
+						<input type="text" class="formu__input" name="Cuit" id="Cuit" placeholder="Cuit">
+						<i class="formu__valida-estado fas fa-times-circle"></i>
+					</div>
+					<p class="formu__input-error">El Cuit debe ser de la forma 00-12345678-0 y solo puede contener números y 2 guiones, o no es un cuit válido. Se evalúa el dígito verificador.</p>	
+				</div>	
+
+				<!-- Grupo: Nombre de Empresa -->
+				<div class="formu__grupo" id="grupo__NomEmp">
+					<label for="NomEmp" class="formu__label tituh4">Nombre de Empresa</label>
+					<div class="formu__grupo-input">
+						<input type="text" class="formu__input" name="NomEmp" id="NomEmp" placeholder="Nombre de Empresa">
+						<i class="formu__valida-estado fas fa-times-circle"></i>
+					</div>
+					<p class="formu__input-error">El Nombre de la Empresa tiene que ser de 5 a 40 dígitos y solo puede contener números, letras y guión bajo.</p>	
+				</div>	
+
+				<!-- Grupo: Código Postal -->
+				<div class="formu__grupo" id="grupo__Postal">
+					<label for="Postal" class="formu__label tituh4">Código Postal</label>
+					<div class="formu__grupo-input">
+						<input type="text" class="formu__input" name="Postal" id="Postal" placeholder="0000">
+						<i class="formu__valida-estado fas fa-times-circle"></i>
+					</div>
+					<p class="formu__input-error">El código postal solo puede contener 4 números.</p>	
+				</div>	
+
+				<!-- Grupo: Dirección -->
+				<div class="formu__grupo" id="grupo__Dire">
+					<label for="Dire" class="formu__label tituh4">Dirección</label>
+					<div class="formu__grupo-input">
+						<input type="text" class="formu__input" name="Dire" id="Dire" placeholder="Dirección">
+						<i class="formu__valida-estado fas fa-times-circle"></i>
+					</div>
+					<p class="formu__input-error">La Dirección tiene que ser de 5 a 40 dígitos y solo puede contener números, letras y guión bajo.</p>	
+				</div>	
+
+				<!-- Grupo: Correo Electrónico -->
+				<div class="formu__grupo" id="grupo__Email">
+					<label for="Email" class="formu__label tituh4">Correo Electrónico</label>
+					<div class="formu__grupo-input">
+						<input type="email" class="formu__input" name="Email" id="Email" placeholder="correo@correo.com">
+						<i class="formu__valida-estado fas fa-times-circle"></i>
+					</div>
+					<p class="formu__input-error">El correo debe contener un @ y solo puede contener letras, números, puntos, guiones y guión bajo.</p>	
+				</div>	
+
+				<!-- Grupo: Localidad -->
+				<div class="formu__grupo" id="grupo__Loca">
+					<label for="Loca" class="formu__label tituh4">Localidad</label>
+					<div class="formu__grupo-input">
+						<input type="text" class="formu__input" name="Loca" id="Loca" placeholder="Localidad">
+						<i class="formu__valida-estado fas fa-times-circle"></i>
+					</div>
+					<p class="formu__input-error">La Localidad tiene que ser de 5 a 40 dígitos y solo puede contener números, letras y guión bajo.</p>	
+				</div>	
+
+				<!-- Grupo: Teléfono -->
+				<div class="formu__grupo" id="grupo__Tfono">
+					<label for="Tfono" class="formu__label tituh4">Teléfono</label>
+					<div class="formu__grupo-input">
+						<input type="text" class="formu__input" name="Tfono" id="Tfono" placeholder="12341234123">
+						<i class="formu__valida-estado fas fa-times-circle"></i>
+					</div>
+					<p class="formu__input-error">El teléfono solo puede contener números, y de 8 a 11 dígitos.</p>	
+				</div>	
+
+				<!-- Grupo: Provincia -->
+				<div class="formu__grupo" id="grupo__listaprov">
+					<label for="listaprov" class="formu__label tituh4">Provincia</label>
+					<div class="formu__grupo-input">
+						<select class="formu__input" name="listaprov" id="listaprov">
+					<option value="0">Provincia</option>
+					<option value="1">Ciudad Autónoma de Buenos Aires</option>
+					<option value="2">Buenos Aires</option>
+					<option value="3">Catamarca</option>
+					<option value="4">Chaco</option>
+					<option value="5">Chubut</option>
+					<option value="6">Córdoba</option>
+					<option value="7">Corrientes</option>
+					<option value="8">Entre Ríos</option>
+					<option value="9">Formosa</option>
+					<option value="10">Islas Malvinas</option>
+					<option value="11">Jujuy</option>
+					<option value="12">La Pampa</option>
+					<option value="13">La Rioja</option>
+					<option value="14">Mendoza</option>
+					<option value="15">Misiones</option>
+					<option value="16">Neuquén</option>
+					<option value="17">Río Negro</option>
+					<option value="18">Salta</option>
+					<option value="19">San Juan</option>
+					<option value="20">San Luis</option>
+					<option value="21">Santa Cruz</option>
+					<option value="22">Santa Fé</option>
+					<option value="23">Santiago del Estero</option>
+					<option value="24">Tierra del Fuego</option>
+					<option value="25">Tucumán</option>
+						</select>						
+						<i class="formu__valida-estado fas fa-times-circle"></i>
+					</div>
+					<p class="formu__input-error">Debe seleccionar una provincia.</p>	
+				</div>		
+				
+				<!-- Grupo: Terminos y Condiciones -->
+				<div class="formu__grupo formu__grupo-terminos" id="grupo__terminos">
+					<label class="formu__label">
+						<input class="formu__checkbox" type="checkbox" name="terminos" id="terminos">
+						Acepto los Términos y Condiciones
+					</label>
+				</div>
+				
+				<!-- Mensaje de error en formulario -->
+				<div class="formu__grupo formu__mensaje" id="formu__mensaje">
+					<p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellene el formulario correctamente. </p>
+				</div>
+		
+				<!-- Mensaje de error por no tildar los terminos y condiciones -->
+				<div class="formu__grupo formu__mensaje1" id="formu__mensaje1">
+					<p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Debe leer y luego tildar los terminos y condiciones, si está de acuerdo. </p>
+				</div>
+						
+				
+				<!-- Botón de Enviar -->
+				<div class="formu__grupo formu__grupo-btn-enviar">
+					<button type="submit" class="formu__btn tituh4">Enviar</button>
+					<p class="formu__mensaje-exito" id="formu__mensaje-exito"> Formulario enviado exitosamente! </p>
+				</div>
+			</form>
+								
+			<footer class="footer">
+				<p class="tituh4">Repuestos Lucas</p>
+				<p class="tituh5">4666-1908/15  ///
+				Ciudad Autónoma de Buenos Aires</p>
+				<a class="tituh5" href="mailto:repuestoslucas2020@yahoo.com.ar">repuestoslucas2020@yahoo.com.ar</a>
+				<p class="tituh5" align="center" style="color: rgba(255, 255, 255, 0.329)">Copyright LRZ &copy; 2021</p>
+			</footer>
+		</div>
+
+		<div id="volver">
+			<input type="checkbox" id="check2" class="s1 s1hide" name="check2">
+			<label for="check2" class="s1 s1hide">
+				<img src="./mis_IMAGENES/cd-top-arrow.svg" alt="logo RL">
+			</label>
+			<!-- <a href="#up" class="simplescrollup__button simplescrollup__button--hide">Volver arriba</a>-->
+		</div>
+
+		<!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script> -->
+		<script src="./mis_JS/todos-nav-ico-intercambio.js"></script>
+		<script src="./mis_JS/todos-volverarriba.js"></script>
+		<script src="./mis_JS/3-Clientes.js"></script>
+		<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script><!-- Página de íconos -->	
+	</body>
+</html>

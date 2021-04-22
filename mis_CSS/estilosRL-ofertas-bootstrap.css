@@ -1,0 +1,150 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+
+body {
+	background-color: rgb(95,158,160);/*cadetblue;*/
+}
+
+.container {
+	width:90%;
+	max-width:1000px;
+	margin:20px auto;
+}
+
+img{width: 100%;}
+
+header{
+	background: #008080;
+	border-radius: 4px;
+	padding-bottom: 5px;
+	align-items: center;
+}
+
+	.logo-RL {
+	}
+	.logo-RL img {
+		width:60%;
+		min-width: 80px;
+	}
+
+.fila2{
+	margin: 0px 30px;
+}
+	.fila2 a + a {
+		margin-left: 20px;
+	}
+
+	.nav{
+		margin-top: 5px;
+		padding-right: 0px;
+	}
+	.nav a:hover {
+		border-radius: 4px;
+
+		transition: all 70ms linear;
+		transform: scale(1.1,1.1)
+	}
+
+.fila3{
+	margin: 0px -30px;
+}
+#carouselArticulos{
+	border: 1px solid white;
+/*	border-top: 1px solid white;
+	border-bottom: 1px solid white;*/
+	margin: 5px auto;
+	border-radius: 4px;
+}
+
+#carouselArticulos img{
+	margin: 0px auto;
+}
+
+#carouselArticulos .carousel-indicators li{
+	border:0;
+	background-color: green;
+	width: 12px;
+	height: 12px;
+	border-radius: 100%;
+}
+
+#carouselArticulos .carousel-indicators li.active{
+	border:0;
+	background-color: red;
+	width: 14px;
+	height: 14px;
+	border-radius: 100%;
+}
+
+article{
+	background-color: lightblue;
+	border-radius: 4px;
+	padding: 20px;
+}
+	.artitems{
+		border: 1px solid black;
+		padding: 0px;
+	}
+	.artitems p{padding-left: 5px}
+
+	article div:hover{
+		background-color: lightblue;
+		box-shadow: 3px 5px;
+		z-index: 100;
+		transform: scale(1.2);
+		cursor: pointer;
+	}
+	article div:active{
+		background-color: lightblue;
+		box-shadow: 3px 5px;
+		z-index: 100;
+		transform: scale(2);
+		cursor: -webkit-grabbing;
+	}
+	article div p{
+		padding-left: 5px;
+	}
+
+footer{
+	margin-top:5px;
+	border-radius: 4px;
+	background: linear-gradient(140deg, rgba(32,32,32,1) 0%, rgba(32,32,32,1) 45%, rgba(95,158, 160,1) 88%, rgba(95,158, 160,1) 100%);
+	color: white;
+	line-height: 10px;
+	padding-top: 5px;
+}
+
+
+@media screen and (max-width: 1200px) {
+	/*se hace si tiene 1200px o menos*/
+	h4{font-size: 1.5rem;}
+	h6{font-size: 0.83rem;}		
+}	
+
+@media screen and (max-width: 992px) {
+	/*se hace si tiene 992px o menos*/
+	h4{font-size: 1.5rem;}
+	h6{font-size: 0.83rem;}
+}
+
+@media screen and (max-width: 768px) {
+	/*se hace si tiene 768px o menos*/
+/*	h4{font-size: 1.33rem;}
+	h6{font-size: 0.67rem;}*/
+	:root {
+		font-size: 14px;
+	}	
+}	
+@media screen and (max-width: 576px) {
+	/*se hace si tiene 576px o menos*/
+	:root {
+		font-size: 12px;
+	}	
+	
+	header .logo-RL{width:70%;}
+}
+

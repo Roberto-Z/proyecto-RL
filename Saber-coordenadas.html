@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<link rel="stylesheet" href="./mis_CSS/Saber-coordenadas.css"><!-- mi carpeta de estilos se pone última para que pise cualquier estilo general de bootstrap-->
+
+<title>Ejercicio 15 - Información sobre eventos</title>
+
+<!--Javascript permite obtener información sobre el ratón y el teclado mediante un 
+objeto especial llamado event. IE considera q este objeto forma parte del objeto 
+window y el resto de los navegadores, lo consideran como el único argumento q
+tienen las funciones manejadoras de eventos.
+Todos los manejadores modernos crean en forma automática, un argumento q se pasa 
+a la función manejadora, por lo q no es necesario incluirlo en esa función.
+Para utilizar este argumento mágico, solo es necesario darle un nombre.
+
+EN IE, el objeto event se obtiene:
+var evento = window.event;
+
+El resto de los navegadores, se obtiene:
+functión manejadorEventos(elEvento){
+  var evento = elEvento;
+}
+
+Una función que funcione correctamente en todos los navegadores sería:
+functión manejadorEventos(elEvento){
+  var evento = elEvento || window.event;
+}
+
+Una vez obtenido el objeto event, ya se puede acceder a toda la info relacionada
+con el evento, que depende del tipo de evento producido.
+
+La propiedad type indica el tipo de evento producido, esto sirve cuando una
+misma función se utiliza para manejar varios eventos.
+var tipo = evento.type;
+
+function resalta(elEvento) {
+  var evento = elEvento || window.event;
+  switch(evento.type) {
+    case 'mouseover':
+      this.style.borderColor = 'black';
+      break;
+    case 'mouseout':
+      this.style.borderColor = 'silver';
+      break;
+  }
+}
+
+La info de coordenadas del ratón, se puede tomar de distintas formas:
+1. respecto de la pantalla del ordenador. (screenX y screenY)
+2. respecto de la ventana del navegador. (clientX y clientY)
+3. respecto de la propia página HTML (q se utiliza cuando el usuario
+ha hecho scroll sobre la página) (pageX y pageY)
+
+Con IE es diferente, por eso hay q saber si estoy en IE:
+var ie = navigator.userAgent,toLowerCase().indexOf('msie')!=1;
+
+-->
+
+</head>
+<script src="./mis_JS/Saber-coordenadas.js"></script>
+<body>
+<div id="info"></div>
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="3bb687accdb9766351563ee2-|49" defer=""></script></body>
+</html>
